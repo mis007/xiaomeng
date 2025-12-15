@@ -3,8 +3,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 // For internal debugging, a placeholder key is preset for out-of-the-box use.
-// IMPORTANT: Replace this with your actual Gemini API key for the app to function correctly.
-const GEMINI_API_KEY = "AIzaSyXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+const GEMINI_API_KEY = "AIzaSyB07l3ddIh_igdTVDdDkVI9sKZxjCQTJOw";
 
 export default defineConfig(({ mode }) => {
     return {
