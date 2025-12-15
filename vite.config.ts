@@ -1,9 +1,12 @@
 import path from 'path';
-import { defineConfig, loadEnv } from 'vite';
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
+// For internal debugging, a placeholder key is preset for out-of-the-box use.
+// IMPORTANT: Replace this with your actual Gemini API key for the app to function correctly.
+const GEMINI_API_KEY = "AIzaSyXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+
 export default defineConfig(({ mode }) => {
-    const env = loadEnv(mode, '.', '');
     return {
       server: {
         port: 3000,
@@ -11,8 +14,8 @@ export default defineConfig(({ mode }) => {
       },
       plugins: [react()],
       define: {
-        'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
+        'process.env.API_KEY': JSON.stringify(GEMINI_API_KEY),
+        'process.env.GEMINI_API_KEY': JSON.stringify(GEMINI_API_KEY)
       },
       resolve: {
         alias: {
